@@ -1,3 +1,3 @@
 class Message
-	attr_accessible :project, :content
+	attr_accessible :project, :content, :type
 end
