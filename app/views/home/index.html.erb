@@ -1,2 +1,16 @@
 <h1>Index</h1>
-<%= debug(@projects) %>
+<ul>
+<%if !@projects.empty? %>
+	<% @projects.each do |project| %>
+	<li>
+		<h2><%= project.name %></h2>
+		<h3>Members</h3>
+		<ul class="memberships">
+			<% project.memberships.membership.to_a.each do |membership| %>
+				<li><%= membership.person.name %> <strong>(<%= membership.role %>)</strong></li>
+			<% end %>
+		</ul>
+	</li>
+	<% end %>
+<% end %>
+</ul>
