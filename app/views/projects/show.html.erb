@@ -1,0 +1,32 @@
+<h2><%= link_to @project.name, @project %></h2>
+<h3>Members</h3>
+<ul class="memberships">
+	<% @project.memberships.membership.to_a.each do |membership| %>
+		<li><%= membership.person.name %> <strong>(<%= membership.role %>)</strong></li>
+	<% end %>
+</ul>
+<h3>Messages</h3>
+<% form_for(@message) do |f| %>
+	<div class="field">
+		<%= f.label :content %>
+		<%= f.text_area :content %>
+	</div>
+	<div class="field">
+		<%= f.label :message_type %>
+		<%= f.text_field :message_type %>
+	</div>
+	<div class="actions">
+		<%= f.hidden_field :project_id %>
+		<%= f.submit "send message" %>
+	</div>
+<% end %>
+<ul class="messages">
+	<% @project.messages.each do |message| %>
+		<li>
+			<%= message.content %>
+			<span class="info">
+				<p>Created at <%= message.created_at %></p>
+			</span>
+		</li>
+	<% end %>
+</ul>
