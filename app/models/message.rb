@@ -17,6 +17,14 @@ class Message < ActiveRecord::Base
 	
 	default_scope :order => 'messages.created_at DESC'
 	
+	def project
+		if project_id.nil?
+			Project.new
+		else
+			Project.find(project_id)
+		end
+	end
+	
 	def send_to_pusher
 		Pusher["xenda-jarvis-#{self.project_id}"].trigger('create', {:id => self.id.to_s,
 																	:content => self.content,
