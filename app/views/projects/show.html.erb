@@ -1,4 +1,3 @@
-<%= link_to "«Projects", root_path %>
 <h2><%= link_to @project.name, @project %></h2>
 <h3>Members</h3>
 
@@ -17,7 +16,7 @@
 	</div>
 	<div class="actions">
 		<%= f.hidden_field :project_id %>
-		<%= f.submit "send message" %>
+		<%= f.submit "Send message" %>
 	</div>
 <% end %>
 

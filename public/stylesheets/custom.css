@@ -1,16 +1,71 @@
 body{
-	font-family:'Segoe UI', Helvetica;
+	background:url('/images/jarvis.png') left bottom fixed no-repeat;
 }
-textarea{
-	width:300px;
-	height:100px;
-	vertical-align:text-top;
+header, section{
+	display:block;
+	width:800px;
+	margin:0 auto;
+	padding:5px 10px;
 }
-.projects{
-	margin:0;
-	padding:0;
-	list-style:none;
+header{
+	background:#3a3a3a;
+	border-top:#444444 solid 1px;
+	border-bottom:#212121 solid 1px;
 }
-h1, h2{
-	margin:2px;
+	header a{
+		color:#fefefe;
+		text-decoration:none;
+	}
+section{
+	background:#e2e2e2;
+	border-top:#ffffff solid 1px;
+	border-bottom:#cecece solid 1px;
 }
+	section ul.projects, section ul.projects li, section ul.messages, section ul.messages li{
+		list-style:none;
+		background:#eeeeee;
+		border-top:#fcfcfc solid 1px;
+		border-bottom:#dddddd solid 1px;
+		padding:0;
+	}
+			section ul.projects li h3{
+				margin:0;
+				padding:0;
+				background:#0066cc;
+				border-bottom:#0056ad solid 1px;
+			}
+				section ul.projects h3 a{
+					display:block;
+					padding:5px 10px;
+					color:white;
+					text-decoration:none;
+				}
+			section ul.projects li h4{
+				margin:10px 15px;
+			}
+				section ul.projects li ul{
+					margin:5px 25px;
+				}
+					section ul.projects li ul li{
+						border:none;
+					}
+		section ul.messages li{
+			padding:10px;
+		}
+			section ul.messages li p.jarvis_info{
+				padding:2px;
+				margin:0;
+				text-align:right;
+			}
+	}
+	section form .field label{
+		vertical-align:text-top;
+		width:200px;
+	}
+	section form .field textarea{
+		vertical-align:text-top;
+		height:70px;
+	}
+	section form #message_submit{
+		padding:10px 20px;
+	}
