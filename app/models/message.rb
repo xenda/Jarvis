@@ -9,6 +9,8 @@ class Message < ActiveRecord::Base
 	#attributes:
 	attr_accessible :project_id, :content, :message_type
 	
+	validates :content, :presence => true, :length => {:maximum => 255}
+	
 	after_create :send_to_pusher
 	
 	TYPES = %w[warning advise message]

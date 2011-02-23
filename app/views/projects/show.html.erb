@@ -5,6 +5,7 @@
 <%= render 'memberships', :members => @project.members %>
 
 <h3>Messages</h3>
+<%= render 'shared/error_messages', :object => f.object %>
 <%= form_for(@message) do |f| %>
 	<div class="field">
 		<%= f.label :content %>
