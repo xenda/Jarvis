@@ -6,4 +6,11 @@ class Project < ActiveResource::Base
 	def messages
 		Message.where("project_id = :project_id", :project_id => id)
 	end
+	
+	def members
+	  memberships = self.memberships.membership
+    memberships = [memberships] unless memberships.kind_of? Array
+    memberships
+	end
+	
 end
