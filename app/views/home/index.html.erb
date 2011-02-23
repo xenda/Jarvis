@@ -1,16 +1,11 @@
-<h1>Index</h1>
-<ul>
+<h1>Projects:</h1>
+<ul class="projects">
 <% unless @projects.empty? %>
 	<% @projects.each do |project| %>
 	<li>
 		<h2><%= link_to project.name, project %></h2>
 		<h3>Members</h3>
-		<ul class="memberships">
-	  <% project.members.each do |membership| %>	
-  		<li><%= membership.person.name %> <strong>(<%= membership.role %>)</strong></li>
-		<% end %>
-
-		</ul>
+		<%= render 'projects/memberships', :members => project.members %>
 	</li>
 	<% end %>
 <% end %>

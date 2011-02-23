@@ -1,10 +1,9 @@
+<%= link_to "«Projects", root_path %>
 <h2><%= link_to @project.name, @project %></h2>
 <h3>Members</h3>
-<ul class="memberships">
-	<% @project.members.each do |membership| %>
-		<li><%= membership.person.name %> <strong>(<%= membership.role %>)</strong></li>
-	<% end %>
-</ul>
+
+<%= render 'memberships', :members => @project.members %>
+
 <h3>Messages</h3>
 <%= form_for(@message) do |f| %>
 	<div class="field">
@@ -12,21 +11,13 @@
 		<%= f.text_area :content %>
 	</div>
 	<div class="field">
-		<%= f.label :message_type %>
-		<%= f.text_field :message_type %>
+		<%= f.label "Type" %>
+		<%= select(:message, :message_type, Message::TYPES) %>
 	</div>
 	<div class="actions">
 		<%= f.hidden_field :project_id %>
 		<%= f.submit "send message" %>
 	</div>
 <% end %>
-<ul class="messages">
-	<% @project.messages.each do |message| %>
-		<li>
-			<%= message.content %>
-			<span class="info">
-				<p>Created at <%= message.created_at %></p>
-			</span>
-		</li>
-	<% end %>
-</ul>
+
+<%= render 'messages' %>
