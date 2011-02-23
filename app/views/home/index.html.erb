@@ -1,6 +1,6 @@
 <h1>Index</h1>
 <ul>
-<%if !@projects.empty? %>
+<% unless @projects.empty? %>
 	<% @projects.each do |project| %>
 	<li>
 		<h2><%= link_to project.name, project %></h2>

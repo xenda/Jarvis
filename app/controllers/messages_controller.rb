@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 		@message = Message.new(params[:message])
 		
 		if @message.save
-			redirect_to Project.find(@message.project_id)
+			redirect_to project_path(@message.project_id)
 		end
 	end
 end

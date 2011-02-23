@@ -1,12 +1,12 @@
 <h2><%= link_to @project.name, @project %></h2>
 <h3>Members</h3>
 <ul class="memberships">
-	<% @project.memberships.membership.to_a.each do |membership| %>
+	<% @project.members.each do |membership| %>
 		<li><%= membership.person.name %> <strong>(<%= membership.role %>)</strong></li>
 	<% end %>
 </ul>
 <h3>Messages</h3>
-<% form_for(@message) do |f| %>
+<%= form_for(@message) do |f| %>
 	<div class="field">
 		<%= f.label :content %>
 		<%= f.text_area :content %>
