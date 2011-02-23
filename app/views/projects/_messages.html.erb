@@ -1,0 +1,10 @@
+<ul class="messages">
+	<% @project.messages.each do |message| %>
+		<li class="<%= message.message_type %>">
+			<%= message.content %>
+			<span class="info">
+				<p>Created at <%= message.created_at.strftime("%m/%d/%Y") %></p>
+			</span>
+		</li>
+	<% end %>
+</ul>
