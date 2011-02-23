@@ -4,7 +4,7 @@ class Project < ActiveResource::Base
 	headers['X-TrackerToken'] = '3fa226bc048021e8467040561f403381'
 	
 	def messages
-		Message.where("project_id = :project_id", :project_id => id)
+		Message.where(:project_id => id)
 	end
 	
 	def members
@@ -12,5 +12,5 @@ class Project < ActiveResource::Base
     memberships = [memberships] unless memberships.kind_of? Array
     memberships
 	end
-	
+		
 end
