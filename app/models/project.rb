@@ -12,5 +12,5 @@ class Project < ActiveResource::Base
     	memberships = [memberships] unless memberships.kind_of? Array
     	memberships
 	end
-	
+		
 end
