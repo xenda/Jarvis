@@ -16,6 +16,7 @@
 	margin:5px auto;
 	color:white;
 	padding:6px 10px;
+	padding-left:30px;
 	border-radius:9px;
 	-webkit-border-radius:9px;
 	-moz-border-radius:9px;
@@ -23,4 +24,14 @@
 	-moz-opacity:0.75;
 	box-shadow:1px 1px 5px #666666;
 	-webkit-box-shadow:1px 1px 5px #666666;
+	-moz-box-shadow:1px 1px 5px #666666;
 }
+	.pusher_message.warning{
+		background:black url('/images/warning.png') 8px center no-repeat;
+	}
+	.pusher_message.advice{
+		background:black url('/images/advice.png') 8px center no-repeat;
+	}
+	.pusher_message.message{
+		background:black url('/images/message.png') 8px center no-repeat;
+	}

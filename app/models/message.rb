@@ -13,7 +13,7 @@ class Message < ActiveRecord::Base
 	
 	after_create :send_to_pusher
 	
-	TYPES = %w[warning advise message]
+	TYPES = %w[warning advice message]
 	
 	default_scope :order => 'messages.created_at DESC'
 	

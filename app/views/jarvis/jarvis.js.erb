@@ -1,5 +1,5 @@
 function show_message(message){
-	pusher_message = $('<div class="pusher_message">'+message.content+'</div>').css('display', 'none');
+	pusher_message = $('<div class="pusher_message '+message.type+'">'+message.content+'</div>').css('display', 'none');
 	pusher_message.appendTo($('#pusher_stack')).fadeIn(1000);
 }
 
