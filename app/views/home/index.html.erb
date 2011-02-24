@@ -1,10 +1,10 @@
-<h1>Projects:</h1>
+<h2>Projects:</h2>
 <ul class="projects">
 <% unless @projects.empty? %>
 	<% @projects.each do |project| %>
 	<li>
-		<h2><%= link_to project.name, project %></h2>
-		<h3>Members</h3>
+		<h3><%= link_to project.name, project %></h3>
+		<h4>Members</h4>
 		<%= render 'projects/memberships', :members => project.members %>
 	</li>
 	<% end %>

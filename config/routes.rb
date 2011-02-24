@@ -7,6 +7,10 @@ Jarvis::Application.routes.draw do
 	end
 	
 	resources :messages
+	resources :project_details
 	
 	root :to => 'home#index'
+	
+	match 'jarvis.js' => 'jarvis#jarvis'
+	match 'latest.js' => 'jarvis#latest'
 end

@@ -1,0 +1,38 @@
+%h2
+ =link_to @project.name, @project
+
+%h3 Members
+
+=render 'projects/memberships', :members => @project.members
+
+%h3 Details
+
+= form_for(@detail) do |f|
+ =render 'shared/error_messages', :object => f.object
+ .field
+  =f.label :name
+  =f.text_field :name
+ .field
+  =f.label :value
+  =f.text_field :value
+ .actions
+  =f.hidden_field :project_id
+  =f.submit "Add project detail"
+
+= render 'projects/details'
+
+%h3 Messages
+
+= form_for(@message) do |f|
+ =render 'shared/error_messages', :object => f.object
+ .field
+  =f.label :content
+  =f.text_area :content
+ .field
+  =f.label "Type"
+  =select(:message, :message_type, Message::TYPES)
+ .actions
+  =f.hidden_field :project_id
+  =f.submit "Send message"
+
+= render 'projects/messages'

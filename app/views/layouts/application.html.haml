@@ -1,0 +1,13 @@
+!!! 5
+%html
+%head
+ %title
+  Jarvis
+  =title
+ =stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+ =stylesheet_link_tag 'custom', :media => 'screen'
+ =csrf_meta_tag
+%body
+ = render 'layouts/header'
+ %section
+  = yield

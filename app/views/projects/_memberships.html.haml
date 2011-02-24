@@ -1,0 +1,6 @@
+%ul.memberships
+ - members.each do |membership|
+  %li
+   =membership.person.name
+   %strong
+    (#{membership.role})
