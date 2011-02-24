@@ -1,17 +1,17 @@
 function show_message(message){
 	pusher_message = $('<div class="pusher_message">'+message.content+'</div>').css('display', 'none');
-	pusher_message.appendTo($('#pusher_stack')).fadeIn(200);
-	
-	$('#pusher_stack .pusher_message').live('click', function(){
-		$(this).fadeOut(function(){
-			$(this).detach();
-		});
-	});
+	pusher_message.appendTo($('#pusher_stack')).fadeIn(1000);
 }
 
 $('head').append('<link href="http://xenda-jarvis.heroku.com/javascripts/jarvis.css" media="screen" rel="stylesheet" type="text/css" />');
 
 $(document).ready(function(){
+	$('#pusher_stack .pusher_message').live('click', function(){
+		$(this).fadeOut(function(){
+			$(this).detach();
+		});
+	});
+	
 	$.getJSON('http://xenda-jarvis.heroku.com/latest.js?project=<%= @id %>&callback=?', function(data){
 		$.each(data, function(index){
 			var last_message = data[index];
