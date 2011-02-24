@@ -30,7 +30,7 @@ class JarvisController < ApplicationController
 			}
 		}
 		
-		cookies.permanent.signed[:last_message] = @messages.last.id.to_s
+		cookies.permanent.signed[:last_message] = @messages.last.id.to_s unless @messages.last.nil?
 		
 		render :json => @response, :callback => params[:callback]
 		
