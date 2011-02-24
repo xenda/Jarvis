@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110222223811) do
+ActiveRecord::Schema.define(:version => 20110224065952) do
 
   create_table "messages", :force => true do |t|
     t.string   "content"
@@ -21,5 +21,15 @@ ActiveRecord::Schema.define(:version => 20110222223811) do
   end
 
   add_index "messages", ["project_id"], :name => "index_messages_on_project_id"
+
+  create_table "project_details", :force => true do |t|
+    t.integer  "project_id"
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_details", ["project_id"], :name => "index_project_details_on_project_id"
 
 end

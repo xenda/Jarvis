@@ -3,17 +3,17 @@ class JarvisController < ApplicationController
 	respond_to :js
 	
 	def jarvis
-		@id = params[:project]
+		@id = get_id_by_host
 		
 		unless @id.nil?
 			render 'jarvis/jarvis.js'
 		else
-			render :text => "ID incorrecto", :status => 404 #render :nothing => true
+			render :text => "ID incorrecto", :status => 404
 		end
 	end
 	
 	def latest
-		@id = params[:project]
+		@id = get_id_by_host
 		
 		last_id = (cookies.signed[:last_message].nil?) ? 0 : cookies.signed[:last_message]
 		
@@ -35,5 +35,18 @@ class JarvisController < ApplicationController
 		render :json => @response, :callback => params[:callback]
 		
 	end
+	
+	private
+	
+		def get_id_by_host
+			host = request.env['HTTP_HOST']
+			projectDetail = ProjectDetail.where(:name => "url", :value => host).first
+			
+			unless projectDetail.nil?
+				projectDetail.project.id
+			else
+				nil
+			end
+		end
 	
 end

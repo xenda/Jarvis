@@ -52,6 +52,15 @@ section{
 		section ul.messages li{
 			padding:10px;
 		}
+		section ul.messages li.warning{
+			background:url('/images/warning_black.png') 10px 10px no-repeat;
+		}
+		section ul.messages li.advice{
+			background:url('/images/advice_black.png') 10px 10px no-repeat;
+		}
+		section ul.messages li.message{
+			background:url('/images/message_black.png') 10px 10px no-repeat;
+		}
 			section ul.messages li p.jarvis_info{
 				padding:2px;
 				margin:0;
