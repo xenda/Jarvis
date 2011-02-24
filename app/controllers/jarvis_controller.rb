@@ -17,7 +17,7 @@ class JarvisController < ApplicationController
 		
 		last_id = (cookies.signed[:last_message].nil?) ? 0 : cookies.signed[:last_message]
 		
-		@messages = Message.where(:project_id => @id).where(["id > ?", last_id]).limit(3)
+		@messages = Message.where(:project_id => @id).where(["id > ?", last_id]).limit(3).reverse
 		
 		@response = Array.new
 		
