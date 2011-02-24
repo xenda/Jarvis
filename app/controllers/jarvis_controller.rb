@@ -19,16 +19,13 @@ class JarvisController < ApplicationController
 		
 		@messages = Message.where(:project_id => @id).where(["id > ?", last_id]).limit(3).reverse
 		
-		@response = Array.new
-		
-		@messages.map{
-			|m| @response << {
-				:id => m.id.to_s,
-				:content => m.content,
-				:type => m.message_type,
-				:project_id => m.project_id
-			}
-		}
+		@response = @messages.map{ |m| {
+							:id => m.id.to_s,
+							:content => m.content,
+							:type => m.message_type,
+							:project_id => m.project_id
+						}
+					}
 		
 		cookies.permanent.signed[:last_message] = @messages.last.id.to_s unless @messages.last.nil?
 		
