@@ -3,8 +3,11 @@
 %head
  %title
   Jarvis
-  =title
- =stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+  = title
+ = stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+ %link{:href=>"http://fonts.googleapis.com/css?family=Droid+Serif:regular,italic,bold,bolditalic", :rel=>"stylesheet", :type=>"text/css"}
+ %link{:href=>"http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700", :rel=>"stylesheet", :type=>"text/css"}
+
  =stylesheet_link_tag 'custom', :media => 'screen'
  =csrf_meta_tag
 %body
