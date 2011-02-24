@@ -6,7 +6,15 @@ class Project < ActiveResource::Base
 	def details
 		ProjectDetail.where(:project_id => self.id).order("name")
 	end
-	
+
+  def build_message
+    Message.new(:project_id => self.id)
+  end
+
+  def build_detail
+		ProjectDetail.new(:project_id => self.id)
+  end
+
 	def members
 		memberships = self.memberships.membership
     	memberships = [memberships] unless memberships.kind_of? Array
