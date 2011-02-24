@@ -3,9 +3,7 @@ class JarvisController < ApplicationController
 	respond_to :js
 	
 	def jarvis
-		#@id = get_id_by_host
-		
-		@id = 99714
+		@id = get_id_by_host
 		
 		unless @id.nil?
 			render 'jarvis/jarvis.js'

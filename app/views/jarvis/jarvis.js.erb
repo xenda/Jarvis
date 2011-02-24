@@ -1,4 +1,3 @@
-//<%= request.env['HTTP_REFERER'] %>
 function show_message(message){
 	pusher_message = $('<div class="pusher_message '+message.type+'">'+message.content+'</div>').css('display', 'none');
 	pusher_message.appendTo($('#pusher_stack')).fadeIn(1000);
@@ -13,7 +12,7 @@ $(document).ready(function(){
 		});
 	});
 	
-	$.getJSON('http://xenda-jarvis.heroku.com/latest.js?project=<%= @id %>&callback=?', function(data){
+	$.getJSON('http://xenda-jarvis.heroku.com/latest.js&callback=?', function(data){
 		$.each(data, function(index){
 			var last_message = data[index];
 			show_message(last_message);
