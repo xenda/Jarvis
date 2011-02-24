@@ -29,7 +29,7 @@ class JarvisController < ApplicationController
                                 }
 		}
 		
-    cookies.permanent.signed[:last_message] = @messages.last.id.to_s if @messages.last
+    	cookies.permanent.signed[:last_message] = @messages.last.id.to_s if @messages.last
 		
 		render :json => @response, :callback => params[:callback]
 		
@@ -42,7 +42,7 @@ class JarvisController < ApplicationController
 
 			projectDetail = ProjectDetail.where(:name => "url", :value => host).first
 			
-      if projectDetail
+			if projectDetail
 				projectDetail.project_id
 			else
 				nil
