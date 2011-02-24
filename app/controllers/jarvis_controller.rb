@@ -41,7 +41,7 @@ class JarvisController < ApplicationController
 	private
 	
 		def get_id_by_host
-			host = request.env['HTTP_HOST']
+			host = request.env['HTTP_REFERER']
 			projectDetail = ProjectDetail.where(:name => "url", :value => host).first
 			
 			unless projectDetail.nil?
