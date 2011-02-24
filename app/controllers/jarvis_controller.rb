@@ -28,7 +28,7 @@ class JarvisController < ApplicationController
 			}
 		}
 		
-		render :json => @response
+		render :json => @response, :callback => params[:callback]
 		
 	end
 	

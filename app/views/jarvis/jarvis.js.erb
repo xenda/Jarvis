@@ -11,7 +11,7 @@ function show_message(message){
 
 $('head').append('<link href="http://xenda-jarvis.heroku.com/javascripts/jarvis.css" media="screen" rel="stylesheet" type="text/css" />');
 
-$.getJSON('http://xenda-jarvis.heroku.com/latest.js?project=<%= @id %>', function(data){
+$.getJSON('http://xenda-jarvis.heroku.com/latest.js?project=<%= @id %>&callback=?', function(data){
 	$.each(data, function(index){
 		var last_message = data[index];
 		show_message(last_message);
