@@ -15,7 +15,9 @@ class JarvisController < ApplicationController
 	def latest
 		@id = params[:project]
 		
-		@messages = Message.where(:project_id => @id).limit(3)
+		last_id = (cookies.signed[:last_message].nil?) ? 0 : cookies.signed[:last_message]
+		
+		@messages = Message.where(:project_id => @id).where(["id > ?", last_id]).limit(3)
 		
 		@response = Array.new
 		
@@ -27,6 +29,8 @@ class JarvisController < ApplicationController
 				:project_id => m.project_id
 			}
 		}
+		
+		cookies.permanent.signed[:last_message] = @messages.last.id.to_s
 		
 		render :json => @response, :callback => params[:callback]
 		

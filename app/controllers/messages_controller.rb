@@ -1,4 +1,7 @@
 class MessagesController < ApplicationController
+	
+	default_scope :order => 'messages.created_at DESC'
+	
 	def create
 		@message = Message.new(params[:message])
 		
