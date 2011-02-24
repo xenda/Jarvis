@@ -7,6 +7,7 @@ Jarvis::Application.routes.draw do
 	end
 	
 	resources :messages
+	resources :project_details
 	
 	root :to => 'home#index'
 	

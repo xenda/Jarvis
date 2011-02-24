@@ -3,7 +3,28 @@
 
 <%= render 'projects/memberships', :members => @project.members %>
 
+<h3>Details</h3>
+
+<%= form_for(@detail) do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :value %>
+		<%= f.text_field :value %>
+	</div>
+	<div class="actions">
+		<%= f.hidden_field :project_id %>
+		<%= f.submit "Add project detail" %>
+	</div>
+<% end %>
+
+<%= render 'projects/details' %>
+
 <h3>Messages</h3>
+
 <%= form_for(@message) do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 	<div class="field">

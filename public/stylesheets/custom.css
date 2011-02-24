@@ -21,12 +21,15 @@ section{
 	border-top:#ffffff solid 1px;
 	border-bottom:#cecece solid 1px;
 }
-	section ul.projects, section ul.projects li, section ul.messages, section ul.messages li{
+	section ul.projects, section ul.projects li, section ul.messages, section ul.messages li, section dl.details{
 		list-style:none;
 		background:#eeeeee;
 		border-top:#fcfcfc solid 1px;
 		border-bottom:#dddddd solid 1px;
 		padding:0;
+	}
+	section dl.details{
+		padding:5px;
 	}
 			section ul.projects li h3{
 				margin:0;
@@ -75,6 +78,6 @@ section{
 		vertical-align:text-top;
 		height:70px;
 	}
-	section form #message_submit{
+	section form #message_submit, section form #project_detail_submit{
 		padding:10px 20px;
 	}
