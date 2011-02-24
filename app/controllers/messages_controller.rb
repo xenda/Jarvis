@@ -1,13 +1,13 @@
 class MessagesController < ApplicationController
-	
 	def create
 		@message = Message.new(params[:message])
 		
 		if @message.save
-			redirect_to project_path(@message.project_id)
+			redirect_to project_path(@message.project)
 		else
 			@project = @message.project
-			render 'projects/show'
+			
+			render_project_view
 		end
 	end
 end
