@@ -81,3 +81,43 @@ section{
 	section form #message_submit, section form #project_detail_submit{
 		padding:10px 20px;
 	}
+	section .flash{
+		display:block;
+		padding:4px;
+	}
+	section .flash.warning{
+		background:#fff884;
+		border-top:#fefaad solid 2px;
+		border-left:#fefaad solid 2px;
+		border-right:#fff770 solid 2px;
+		border-bottom:#fff770 solid 2px;
+	}
+	section .flash.message{
+		background:#e0efff;
+		border-top:#c1e0ff solid 2px;
+		border-left:#c1e0ff solid 2px;
+		border-right:#99cbff solid 2px;
+		border-bottom:#99cbff solid 2px;
+	}
+	section #error_explanation{
+		background:#ff877a;
+		border-top:#ff998e solid 2px;
+		border-left:#ff998e solid 2px;
+		border-right:#ff6b5b solid 2px;
+		border-bottom:#ff6b5b solid 2px;
+	}
+	section #error_explanation h2{
+		font-size:16px;
+		margin:0;
+	}
+	section #error_explanation ul, section #error_explanation ul li{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	section #error_explanation ul li{
+		padding:4px 10px;
+		background:#ff5947;
+		border-top:#ff6b5b solid 1px;
+		border-bottom:#ff4633 solid 1px;
+	}
