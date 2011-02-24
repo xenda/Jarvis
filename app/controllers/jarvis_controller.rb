@@ -12,4 +12,24 @@ class JarvisController < ApplicationController
 		end
 	end
 	
+	def latest
+		@id = params[:project]
+		
+		@messages = Message.where(:project_id => @id).limit(3)
+		
+		@response = Array.new
+		
+		@messages.map{
+			|m| @response << {
+				:id => m.id.to_s,
+				:content => m.content,
+				:type => m.message_type,
+				:project_id => m.project_id
+			}
+		}
+		
+		render :json => @response
+		
+	end
+	
 end

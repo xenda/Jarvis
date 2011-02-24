@@ -11,4 +11,5 @@ Jarvis::Application.routes.draw do
 	root :to => 'home#index'
 	
 	match 'jarvis.js' => 'jarvis#jarvis'
+	match 'latest.js' => 'jarvis#latest'
 end
