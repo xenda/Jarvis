@@ -10,6 +10,8 @@ gem 'mysql'
 
 gem 'pusher'
 
+gem 'haml'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

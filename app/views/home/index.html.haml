@@ -1,0 +1,9 @@
+%h2 Projects:
+
+%ul.projects
+ - unless @projects.empty?
+  - @projects.each do |project|
+   %li
+    %h3= link_to project.name, project
+    %h4 Members
+    = render 'projects/memberships', :members => project.members
