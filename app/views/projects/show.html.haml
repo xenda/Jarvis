@@ -7,32 +7,28 @@
 
 %h3 Details
 
-= form_for(@detail) do |f|
+= simple_form_for @detail do |f|
  =render 'shared/error_messages', :object => f.object
  .field
-  =f.label :name
-  =f.text_field :name
+  =f.input :name
  .field
-  =f.label :value
-  =f.text_field :value
+  =f.input :value
  .actions
-  =f.hidden_field :project_id
-  =f.submit "Add project detail"
+  =f.input :project_id, :as => :hidden
+  =f.button :submit
 
 = render 'projects/details'
 
 %h3 Messages
 
-= form_for(@message) do |f|
+= simple_form_for @message do |f|
  =render 'shared/error_messages', :object => f.object
  .field
-  =f.label :content
-  =f.text_area :content
+  =f.input :content, :as => :text
  .field
-  =f.label "Type"
-  =select(:message, :message_type, Message::TYPES)
+  =f.input :message_type, :collection => Message::TYPES, :prompt => false
  .actions
-  =f.hidden_field :project_id
-  =f.submit "Send message"
+  =f.input :project_id, :as => :hidden
+  =f.button :submit
 
 = render 'projects/messages'

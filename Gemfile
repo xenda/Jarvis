@@ -12,6 +12,8 @@ gem 'pusher'
 
 gem 'haml'
 
+gem 'simple_form'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
