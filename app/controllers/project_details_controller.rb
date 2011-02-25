@@ -15,4 +15,18 @@ class ProjectDetailsController < ApplicationController
 			render_project_view
 		end
 	end
+	
+	#Algún día los implementaré... algún día u_u
+	
+	def edit
+	end
+	
+	def update
+	end
+	
+	def destroy
+		detail = ProjectDetail.find(params[:id])
+		detail.destroy
+		redirect_to detail.project
+	end
 end

@@ -78,7 +78,7 @@ section{
 	border-top:#ffffff solid 1px;
 	border-bottom:#cecece solid 1px;
 }
-	section ul.projects, section ul.projects li, section ul.messages, section ul.messages li, section dl.details{
+	section ul.projects, section ul.projects li, section ul.messages, section ul.messages li, section ul.details, section ul.details li{
 		list-style:none;
 		background:#eeeeee;
 		border-top: 0 solid #fcfcfc;
@@ -86,7 +86,7 @@ section{
 		padding:0;
 		padding-bottom: 10px;
 	}
-	section dl.details{
+	section ul.details{
 		padding:5px;
 	}
 			section ul.projects li h3{

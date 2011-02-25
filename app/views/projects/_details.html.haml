@@ -1,6 +1,9 @@
-%dl.details
+%ul.details
  - @project.details.each do |detail|
-  %dt
-   =detail.name
-  %dd
+  %li
+   %strong
+    =detail.name
+    \:
    =detail.value
+   %p.float
+    =link_to "Eliminar", detail, :method => :delete, :confirm => "You sure?"
