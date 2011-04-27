@@ -1,8 +1,0 @@
-<ul class="messages">
-	<% @project.messages.each do |message| %>
-		<li class="<%= message.message_type %>">
-			<p class="jarvis_info">Created at <%= message.created_at.strftime("%m/%d/%Y") %></p>
-			<%= message.content %>
-		</li>
-	<% end %>
-</ul>

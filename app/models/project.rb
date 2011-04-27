@@ -16,7 +16,7 @@ class Project < ActiveResource::Base
   end
 
 	def members
-		memberships = self.memberships.membership
+		memberships = self.memberships
     	memberships = [memberships] unless memberships.kind_of? Array
     	memberships
 	end
